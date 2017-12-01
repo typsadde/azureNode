@@ -1,14 +1,14 @@
 var http = require('http');
-/*
+
 var options= {
     host: 'https://api.fixer.io',
     path: '/latest'    
 }
-*/
+
 var server = http.createServer(function(request, response) {
-    var req = {"Message" :"This is a message"};
-    response.writeHead(200, {"Content-Type": "application/json"});
-    response.end(req);
+    //var req = http.get(options, function(response));
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.end("Hello From Azure");
 
 });
 
