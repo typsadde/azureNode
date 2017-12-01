@@ -6,7 +6,7 @@ var options= {
 }
 
 var server = http.createServer(function(request, response) {
-    var req = http.get(options);
+    var req = {"Message" :"This is a message"};
     response.writeHead(200, {"Content-Type": "application/json"});
     response.end(req);
 
