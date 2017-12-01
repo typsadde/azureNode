@@ -6,10 +6,11 @@ var options= {
 }
 
 var server = http.createServer(function(request, response) {
-    var jsonResponse = http.get('https://api.fixer.io/latest');
+    //http.get('https://api.fixer.io/latest' (resp));
+    var jsonResponse = get.request('https://api.fixer.io/latest');
     var temp = "Hello from variable in code"
     response.writeHead(200, {"Content-Type": "application/json"});
-    response.end(jsonResponse);
+    response.end(temp);
 
 });
 
