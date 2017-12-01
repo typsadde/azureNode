@@ -7,8 +7,9 @@ var options= {
 
 var server = http.createServer(function(request, response) {
     //var req = http.get(options, function(response));
+    var temp = "Hello from variable in code"
     response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("Hello From Azure");
+    response.end(temp);
 
 });
 
