@@ -6,7 +6,8 @@ var options= {
 }
 
 var server = http.createServer(function(request, response) {
-    var temp = {"Hello": "from variable in code"};
+    //var temp = {"Hello": "from variable in code"};
+    var temp = "This is text"
     response.writeHead(200, {"Content-Type": "text/plain"});
     response.end(temp);
 
