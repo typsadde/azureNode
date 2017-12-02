@@ -11,9 +11,9 @@ var appRouter = function(app) {
         res.setHeader('Content-Type','application/json')
         url = "https://eurest.mashie.com/public/menu/motorkringlan/a7b70b36?country=se"        
         request(url, function(error,response,body){
-            var data = document.getElementsByTagName('script');
+            //var data = document.getElementsByTagName('script');
             res.setHeader('Content-Type','application/json')
-            res.send(data);
+            res.send(body);
         });
     });
 
