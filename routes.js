@@ -1,4 +1,5 @@
 var request = require('request');
+var document = require('document');
 var appRouter = function(app) {
 
     app.get("/", function(req, res) {
@@ -10,11 +11,9 @@ var appRouter = function(app) {
         res.setHeader('Content-Type','application/json')
         url = "https://eurest.mashie.com/public/menu/motorkringlan/a7b70b36?country=se"        
         request(url, function(error,response,body){
-            var htmlResponse = document.createElement('div');
-            htmlResponse.innerHTML = body;
-            var scripts = htmlResponse.getElementsByTagName('script');
+            var data = document.getElementsByTagName('script');
             res.setHeader('Content-Type','application/json')
-            res.send(scripts);
+            res.send(data);
         });
     });
 
