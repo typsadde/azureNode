@@ -1,5 +1,4 @@
 var request = require('request');
-var document = require('document');
 var appRouter = function(app) {
 
     app.get("/", function(req, res) {
