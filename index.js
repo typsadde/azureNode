@@ -2,29 +2,15 @@ var http = require('http');
 //var request = require('request');
 
 var server = http.createServer(function(request, response) {
-    
-    const https = require("https");
-    const url =
-      "https://maps.googleapis.com/maps/api/geocode/json?address=Florence";
-    https.get(url, res => {
-      res.setEncoding("utf8");
-      let body = "";
-      res.on("data", data => {
-        body += data;
-      });
-      res.on("end", () => {
-        body = JSON.parse(body);
-        response.end(
-          `City: ${body.results[0].formatted_address} -`,
-          `Latitude: ${body.results[0].geometry.location.lat} -`,
-          `Longitude: ${body.results[0].geometry.location.lng}`
-        );
-      });
+
+    request('https://api.fixer.io/latest', function(error,response,body){
+        console.log('error', error);
+        console.log('statuscode', response && response.statusCode);
+        console.log('body',body);
     });
-    
     var temp = "This is text"
     response.writeHead(200, {"Content-Type": "application/json"});
-    //response.end(temp);
+    response.end(temp);
 });
 
 var port = process.env.PORT || 1337;
