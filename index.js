@@ -1,11 +1,21 @@
-var http = require('http');
+/*var http = require('http');
 const https = require("https");
-const express = require("express");
+var app = express();
 var router = express.Router();
 var passport = require('passport');
+*/
 
-var server = http.createServer(function(request, response) {
-    const url =
+var express = require("express");
+var bodyParser = require("body-parser");
+var app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+var routes = require("routes.js")(app);
+
+//var server = http.createServer(function(request, response) {
+/*    const url =
     "https://api.fixer.io/latest";
 
   https.get(url, res => {
@@ -19,13 +29,6 @@ var server = http.createServer(function(request, response) {
       response.end(body);
     });
     });
-
-    /*
-    router.get('/hello', (req, response) => {
-        response.end({ response: 'a GET request for LOOKING at questions' });
-      });
-    response.writeHead(200, {"Content-Type": "application/json"});
-      */
 });
 
 var app = express();
@@ -39,10 +42,14 @@ function (req, res) {
     res.status(200).json({'name': claims['name']});
 }
 );
+*/
 
 var port = process.env.PORT || 1337;
-server.listen(port); 
+//server.listen(port); 
 
-console.log("Server running at http://localhost:%d", port);
+var server = app.listen(port, function () {
+    console.log("Server running at http://localhost:%d", port);
+});
+
 
 
