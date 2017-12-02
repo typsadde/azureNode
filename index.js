@@ -20,12 +20,24 @@ var server = http.createServer(function(request, response) {
     });
 
     var app = express();
-
+    /*
     router.get('/hello', (req, response) => {
         response.end({ response: 'a GET request for LOOKING at questions' });
       });
     response.writeHead(200, {"Content-Type": "application/json"});
+      */
 });
+
+app.get("/hello",
+passport.authenticate('oauth-bearer', {session: false}),
+function (req, res) {
+    var claims = req.authInfo;
+    console.log('User info: ', req.user);
+    console.log('Validated claims: ', claims);
+    
+    res.status(200).json({'name': claims['name']});
+}
+);
 
 var port = process.env.PORT || 1337;
 server.listen(port); 
