@@ -13,7 +13,7 @@ var appRouter = function(app) {
         request(url, function(error,response,body){
             //var data = document.getElementsByTagName('script');
             res.setHeader('Content-Type','application/json')
-            res.send(body);
+            res.send(body.script);
         });
     });
 
