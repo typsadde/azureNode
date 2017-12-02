@@ -1,5 +1,6 @@
 var http = require('http');
 const https = require("https");
+const request = require('request');
 
 var server = http.createServer(function(request, response) {
     const url =
@@ -19,7 +20,6 @@ var server = http.createServer(function(request, response) {
 
     var temp = "This is text"
     response.writeHead(200, {"Content-Type": "application/json"});
-    //response.end(body);
 });
 
 var port = process.env.PORT || 1337;
