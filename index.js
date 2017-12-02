@@ -1,7 +1,6 @@
 var http = require('http');
 const https = require("https");
 const express = require("express");
-
 var router = express.Router();
 
 var server = http.createServer(function(request, response) {
@@ -23,10 +22,8 @@ var server = http.createServer(function(request, response) {
     var app = express();
 
     router.get('/hello', (req, res) => {
-        res.json({ response: 'a GET request for LOOKING at questions' });
+        response.end({ response: 'a GET request for LOOKING at questions' });
       });
-
-    var temp = "This is text"
     response.writeHead(200, {"Content-Type": "application/json"});
 });
 
