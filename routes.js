@@ -2,6 +2,7 @@ var request = require('request');
 var appRouter = function(app) {
 
     app.get("/", function(req, res) {
+        res.setHeader('Content-Type','application/json')        
         res.send("Hello World");
     });
 
