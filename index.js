@@ -4,10 +4,6 @@ const express = require("express");
 
 var router = express.Router();
 
-router.get('/hello', function(req,res){
-    res.json({message:'This is a get request'})
-});
-
 var server = http.createServer(function(request, response) {
     const url =
     "https://api.fixer.io/latest";
@@ -22,7 +18,11 @@ var server = http.createServer(function(request, response) {
       //body = JSON.parse(body);
       response.end(body);
     });
-  });
+    });
+
+    router.get('/hello', function(req,res){
+    res.json({message:'This is a get request'})
+    });
 
     var temp = "This is text"
     response.writeHead(200, {"Content-Type": "application/json"});
