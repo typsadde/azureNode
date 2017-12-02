@@ -12,7 +12,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var routes = require("routes.js")(app);
+var routes = require("./routes.js")(app);
 
 //var server = http.createServer(function(request, response) {
 /*    const url =
