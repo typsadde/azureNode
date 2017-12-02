@@ -3,7 +3,7 @@ var appRouter = function(app) {
 
     app.get("/", function(req, res) {
         res.setHeader('Content-Type','application/json')        
-        res.send("Hello World");
+        res.send('{"Hello":"World"}');
     });
 
     app.get("/currency", function(req, res) {
