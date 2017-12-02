@@ -1,5 +1,5 @@
 var http = require('http');
-var request = require('request');
+//var request = require('request');
 
 var server = http.createServer(function(request, response) {
     var temp = "This is text"
