@@ -2,10 +2,10 @@ var http = require('http');
 const https = require("https");
 
 var server = http.createServer(function(request, response) {
-    let body = '';
+    let body = "Shit in my pants";
     const url =
     "https://api.fixer.io/latest";
-    
+
   https.get(url, res => {
     res.setEncoding("utf8");
     //let body = "";
