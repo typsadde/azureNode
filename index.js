@@ -1,5 +1,4 @@
 var http = require('http');
-var express = require('express')
 const https = require("https");
 
 var server = http.createServer(function(request, response) {
