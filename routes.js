@@ -6,6 +6,16 @@ var appRouter = function(app) {
         res.send('{"Hello":"World"}');
     });
 
+    app.get("/restaurants", function(req, res) {
+        res.setHeader('Content-Type','application/json')
+        url = "https://eurest.mashie.com/public/menu/motorkringlan/a7b70b36?country=se"        
+        request(url, function(error,response,body){
+            var scripts = body.getElementsByTagName('script');
+            res.setHeader('Content-Type','application/json')
+            res.send(scripts);
+        });
+    });
+
     app.get("/currency", function(req, res) {
         var base = req.query.base;
         var symbols = req.query.symbols;
