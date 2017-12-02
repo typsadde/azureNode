@@ -14,13 +14,13 @@ var server = http.createServer(function(request, response) {
     });
     res.on("end", () => {
       body = JSON.parse(body);
-      body = this.body;
+      response.end(body);
     });
   });
 
     var temp = "This is text"
     response.writeHead(200, {"Content-Type": "application/json"});
-   response.end(body);
+    //response.end(body);
 });
 
 var port = process.env.PORT || 1337;
