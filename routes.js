@@ -7,7 +7,7 @@ var appRouter = function(app) {
 
     app.get("/currency", function(req, res) {
         request("https://api.fixer.io/latest", function(error,response,body){
-            response.setHead('Content-Type','application/json')
+            //response.setHead('Content-Type','application/json')
             res.send(body);
         });
         //res.send("Hello from hello path");
