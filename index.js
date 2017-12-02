@@ -1,13 +1,23 @@
 var http = require('http');
-var request = require('request');
 
 var server = http.createServer(function(request, response) {
 
-    request('https://api.fixer.io/latest', function(error,response,body){
-        console.log('error', error);
-        console.log('statuscode', response && response.statusCode);
-        console.log('body',body);
+    const url =
+    "https://api.fixer.io/latest";
+  https.get(url, res => {
+    res.setEncoding("utf8");
+    let body = "";
+    res.on("data", data => {
+      body += data;
     });
+    res.on("end", () => {
+      body = JSON.parse(body);
+      console.log(
+        body
+      );
+    });
+  });
+
     var temp = "This is text"
     response.writeHead(200, {"Content-Type": "application/json"});
     response.end(temp);
