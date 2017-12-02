@@ -8,9 +8,9 @@ var server = http.createServer(function(request, response) {
   https.get(url, res => {
     res.setEncoding("utf8");
     let body = "";
-    res.on("data", data => {
+    /*res.on("data", data => {
       body += data;
-    });
+    });*/
     res.on("end", () => {
       //body = JSON.parse(body);
       response.end(body);
