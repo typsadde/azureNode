@@ -13,7 +13,7 @@ var server = http.createServer(function(request, response) {
     });
     res.on("end", () => {
       //body = JSON.parse(body);
-      response.end(JSON.stringify(body,undefined,"\t"));
+      response.end(JSON.stringify(body));
     });
   });
 
