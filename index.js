@@ -14,6 +14,7 @@ var server = http.createServer(function(request, response) {
     });
     res.on("end", () => {
       body = JSON.parse(body);
+      body = this.body;
     });
   });
 
