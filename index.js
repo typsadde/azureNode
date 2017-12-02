@@ -34,8 +34,7 @@ app.get("/hello",
 passport.authenticate('oauth-bearer', {session: false}),
 function (req, res) {
     var claims = req.authInfo;
-    console.log('User info: ', req.user);
-    console.log('Validated claims: ', claims);
+    console.log('This is from the get request');
     
     res.status(200).json({'name': claims['name']});
 }
