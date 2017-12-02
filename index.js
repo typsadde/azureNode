@@ -22,15 +22,9 @@ var server = http.createServer(function(request, response) {
 
     var app = express();
 
-    app.get("/hello",function (req, res) {
-        res.end("This is a path /hello")
-        res.status(200).json({'name': claims['name']});
-    }
-);
-
-    router.get('/hello', function(req,res){
-    res.json({message:'This is a get request'})
-    });
+    router.get('/hello', (req, res) => {
+        res.json({ response: 'a GET request for LOOKING at questions' });
+      });
 
     var temp = "This is text"
     response.writeHead(200, {"Content-Type": "application/json"});
