@@ -19,7 +19,6 @@ var server = http.createServer(function(request, response) {
     });
     });
 
-    var app = express();
     /*
     router.get('/hello', (req, response) => {
         response.end({ response: 'a GET request for LOOKING at questions' });
@@ -27,6 +26,8 @@ var server = http.createServer(function(request, response) {
     response.writeHead(200, {"Content-Type": "application/json"});
       */
 });
+
+var app = express();
 
 app.get("/hello",
 passport.authenticate('oauth-bearer', {session: false}),
