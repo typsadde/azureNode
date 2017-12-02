@@ -6,8 +6,12 @@ var appRouter = function(app) {
         res.send('{"Hello":"World"}');
     });
 
-    app.get("/currency/:optional?", function(req, res) {
-        var url = "https://api.fixer.io/latest" 
+    app.get("/currency", function(req, res) {
+        var base = req.query.base;
+        var url = "https://api.fixer.io/latest"
+        if (base) {
+            url = "https://api.fixer.io/latest?base="+base;
+        } 
         request(url, function(error,response,body){
             res.setHeader('Content-Type','application/json')
             res.send(body);
