@@ -8,9 +8,13 @@ var appRouter = function(app) {
 
     app.get("/currency", function(req, res) {
         var base = req.query.base;
+        var symbols = req.query.symbols;
         var url = "https://api.fixer.io/latest"
         if (base) {
             url = "https://api.fixer.io/latest?base="+base;
+        }
+        if (base&&symbols) {
+            url = "https://api.fixer.io/latest?base="+base+'&'+'symbols='+symbols;
         } 
         request(url, function(error,response,body){
             res.setHeader('Content-Type','application/json')
