@@ -21,7 +21,7 @@ var server = http.createServer(function(request, response) {
 
     var app = express();
 
-    router.get('/hello', (req, res) => {
+    router.get('/hello', (req, response) => {
         response.end({ response: 'a GET request for LOOKING at questions' });
       });
     response.writeHead(200, {"Content-Type": "application/json"});
