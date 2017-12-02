@@ -14,7 +14,7 @@ var server = http.createServer(function(request, response) {
       });
       res.on("end", () => {
         body = JSON.parse(body);
-        consloge.log(
+        console.log(
           `City: ${body.results[0].formatted_address} -`,
           `Latitude: ${body.results[0].geometry.location.lat} -`,
           `Longitude: ${body.results[0].geometry.location.lng}`
