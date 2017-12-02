@@ -6,13 +6,14 @@ var appRouter = function(app) {
         res.send('{"Hello":"World"}');
     });
 
-    app.get("/currency", function(req, res) {
-        request("https://api.fixer.io/latest", function(error,response,body){
+    app.get("currency/:optional?", function(req, res) {
+        var url = "https://api.fixer.io/latest" 
+        request(url, function(error,response,body){
             res.setHeader('Content-Type','application/json')
             res.send(body);
         });
         //res.send("Hello from hello path");
-    });
+    }); 
 }
     
 module.exports = appRouter;
