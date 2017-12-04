@@ -30,7 +30,7 @@ var appRouter = function(app) {
             
             console.log(script);
             res.setHeader("Content-Type","application/json");
-            res.send(parsedScript);
+            res.send(parsedScript["Weeks"][0]["Days"][0]["DayMenus"][0]["DayMenuName"]);
         });
     });
 
