@@ -25,7 +25,7 @@ var appRouter = function(app) {
             try {
                 parsedScript = JSON.parse(script);
             } catch (e) {
-                //console.log("THIS IS THE ERROR!!!!!!:"+e)
+                console.log("THIS IS THE ERROR!!!!!!:"+e.message)
             }
             
             //console.log(script);
