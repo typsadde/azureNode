@@ -10,15 +10,15 @@ var appRouter = function(app) {
 
     app.get("/restaurant", function(req, res) {
         res.setHeader('Content-Type','application/json')
-        url = "https://eurest.mashie.com/public/menu/sn%C3%A4ckviken/bad07c57?country=se"        
+        url = "https://eurest.mashie.com/public/menu/motorkringlan/a7b70b36?country=se"        
         request(url, function(error,response,html){
 
             var $ = cheerio.load(html);
             var script = $('script').first().toString();
             script = script.replace('<script>','')
             script = script.replace('</script>','')
-            script = script.replace(/^\s+|\s+$/g, '')
-            script = script.replace('varweekData=','')
+            //script = script.replace(/\s/g,'')
+            script = script.replace('var weekData = ','')
             script = script.replace(/newDate/g,"")
             script = script.replace(/"[(]"/g,"")
             script = script.replace(/"[)]"/g,"")
