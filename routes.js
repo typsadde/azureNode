@@ -15,14 +15,14 @@ var appRouter = function(app) {
 
             var $ = cheerio.load(html);
             var script = $('script').first().toString();
-           /* script = script.replace('<script>','')
+            script = script.replace('<script>','')
             script = script.replace('</script>','')
             script = script.replace(/^\s+|\s+$/g, '')
             script = script.replace('varweekData=','')
             script = script.replace(/newDate/g,"")
             script = script.replace(/"[(]"/g,"")
             script = script.replace(/"[)]"/g,"")
-            //parsedScript = JSON.parse(script);*/
+            //parsedScript = JSON.parse(script);
             console.log(script);
             res.setHeader("Content-Type","application/json");
             res.send(script);
