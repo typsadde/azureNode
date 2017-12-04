@@ -19,8 +19,9 @@ var appRouter = function(app) {
             script = script.replace('</script>','')
             script = script.replace(/\s/g,'')
             script = script.replace('varweekData=','')
+            parsedScript = JSON.parse(script);
             res.setHeader("Content-Type","application/json");
-            res.send(script["Weeks"]["Days"]);
+            res.send(script["Weeks"][0]["Days"]);
         });
     });
 
