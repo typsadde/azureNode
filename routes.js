@@ -11,7 +11,6 @@ var appRouter = function(app) {
     app.get("/restaurant", function(req, res) {
         var DayMenuName = req.query.Menu;
         var Day = req.query.Day;
-        var menuToGet = parsedScript;
         res.setHeader('Content-Type','application/json')
         url = "https://eurest.mashie.com/public/menu/sn%C3%A4ckviken/bad07c57?country=se"        
         request(url, function(error,response,html){
@@ -31,6 +30,7 @@ var appRouter = function(app) {
             }
             
             //console.log(script);
+            var menuToGet = parsedScript;            
 
             if (DayMenuName&&Day) {
                 menuToGet = parsedScript["Weeks"][0]["Days"][Day]["DayMenus"][DayMenuName]["DayMenuName"];
