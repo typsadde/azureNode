@@ -23,7 +23,7 @@ var appRouter = function(app) {
             script = script.replace(")","")
             parsedScript = JSON.parse(script);
             res.setHeader("Content-Type","application/json");
-            res.send(script["Weeks"][0]["Days"]);
+            res.send(parsedScript["Weeks"][0]["Days"]);
         });
     });
 
