@@ -22,10 +22,10 @@ var appRouter = function(app) {
             script = script.replace(/new Date/g,"")
             //script = script.replace(/"[(]"/g,"")
             script = script.replace(/[{()})]/g, "");
-            parsedScript = JSON.parse(script);
+            //parsedScript = JSON.parse(script);
             console.log(parsedScript);
             res.setHeader("Content-Type","application/json");
-            res.send(parsedScript);
+            res.send(script);
         });
     });
 
