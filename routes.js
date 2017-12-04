@@ -17,8 +17,8 @@ var appRouter = function(app) {
             var script = $('script').first().toString();
             script = script.replace('<script>','')
             script = script.replace('</script>','')
-            script = script.replace(/\s/g,'')
-            script = script.replace('varweekData=','')
+            //script = script.replace(/\s/g,'')
+            script = script.replace('var weekData = ','')
             script = script.replace(/new Date/g,"")
             //script = script.replace(/"[(]"/g,"")
             script = script.replace(/[()]/g, "");
