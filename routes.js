@@ -24,9 +24,10 @@ var appRouter = function(app) {
             script = script.replace(/[{()})]/g, "");
             try {
                 parsedScript = JSON.parse(script);
-            } catch(e)  {
+            } catch (e) {
                 console.log(e)
             }
+            
             //console.log(script);
             res.setHeader("Content-Type","application/json");
             res.send(parsedScript);
