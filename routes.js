@@ -9,10 +9,12 @@ var appRouter = function(app) {
     });
 
     app.get("/restaurant", function(req, res) {
+        var DayMenuName = req.query.Menu;
+        var Day = req.query.Day;
+        var menuToGet = parsedScript;
         res.setHeader('Content-Type','application/json')
         url = "https://eurest.mashie.com/public/menu/sn%C3%A4ckviken/bad07c57?country=se"        
         request(url, function(error,response,html){
-        
             var $ = cheerio.load(html);
             var script = $('script').first().toString();
             script = script.replace('<script>','')
@@ -28,9 +30,14 @@ var appRouter = function(app) {
                 console.log("THIS IS THE ERROR!!!!!!:"+e.message)
             }
             
-            console.log(script);
+            //console.log(script);
+
+            if (DayMenuName&&Day) {
+                menuToGet = parsedScript["Weeks"][0]["Days"][Day]["DayMenus"][DayMenuName]["DayMenuName"];
+            }
+
             res.setHeader("Content-Type","application/json");
-            res.send(parsedScript["Weeks"][0]["Days"][0]["DayMenus"][1]["DayMenuName"]);
+            res.send(menuToGet);
         });
     });
 
