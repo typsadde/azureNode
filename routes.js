@@ -12,7 +12,7 @@ var appRouter = function(app) {
         res.setHeader('Content-Type','application/json')
         url = "https://eurest.mashie.com/public/menu/sn%C3%A4ckviken/bad07c57?country=se"        
         request(url, function(error,response,html){
-
+        
             var $ = cheerio.load(html);
             var script = $('script').first().toString();
             script = script.replace('<script>','')
@@ -30,7 +30,7 @@ var appRouter = function(app) {
             
             console.log(script);
             res.setHeader("Content-Type","application/json");
-            res.send(parsedScript["Weeks"][0]["Days"][0]["DayMenus"][0]["DayMenuName"]);
+            res.send(parsedScript["Weeks"][0]["Days"][0]["DayMenus"][1]["DayMenuName"]);
         });
     });
 
