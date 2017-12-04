@@ -1,5 +1,6 @@
 var request = require('request');
-var document = require('document');
+var cheerio = require('cheerio');
+
 var appRouter = function(app) {
 
     app.get("/", function(req, res) {
@@ -7,17 +8,23 @@ var appRouter = function(app) {
         res.send('{"Hello":"World"}');
     });
 
-    app.get("/restaurants", function(req, res) {
+    app.get("/restaurant", function(req, res) {
         res.setHeader('Content-Type','application/json')
         url = "https://eurest.mashie.com/public/menu/motorkringlan/a7b70b36?country=se"        
-        request(url, function(error,response,body){
-            var data = document.getElementsByTagName('script');
-            res.setHeader('Content-Type','application/json')
-            res.send(data);
+        request(url, function(error,response,html){
+
+            var $ = cheerio.load(html);
+            var script = $('script').first().toString();
+            script = script.replace('<script>','')
+            script = script.replace('</script>','')
+            script = script.replace(/\s/g,'')
+            script = script.replace('varweekData=','')
+            res.setHeader("Content-Type","application/json");
+            res.send(script);
         });
     });
 
-    app.get("/currency", function(req, res) {
+    app.get("/curr ency", function(req, res) {
         var base = req.query.base;
         var symbols = req.query.symbols;
         var url = "https://api.fixer.io/latest"

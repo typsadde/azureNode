@@ -44,7 +44,7 @@ function (req, res) {
 );
 */
 
-var port = process.env.PORT || 1337;
+var port = process.env.PORT || 5000;
 //server.listen(port); 
 
 var server = app.listen(port, function () {
