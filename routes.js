@@ -20,7 +20,7 @@ var appRouter = function(app) {
             script = script.replace(/\s/g,'')
             script = script.replace('varweekData=','')
             res.setHeader("Content-Type","application/json");
-            res.send(script["Weeks"][0]["Days"]);
+            res.send(script["Weeks"]);
         });
     });
 
