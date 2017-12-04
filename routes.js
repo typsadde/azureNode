@@ -28,7 +28,7 @@ var appRouter = function(app) {
                 console.log("THIS IS THE ERROR!!!!!!:"+e.message)
             }
             
-            //console.log(script);
+            console.log(script);
             res.setHeader("Content-Type","application/json");
             res.send(parsedScript);
         });
