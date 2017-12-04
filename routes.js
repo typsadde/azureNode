@@ -10,7 +10,7 @@ var appRouter = function(app) {
 
     app.get("/restaurant", function(req, res) {
         res.setHeader('Content-Type','application/json')
-        url = "https://eurest.mashie.com/public/menu/motorkringlan/a7b70b36?country=se"        
+        url = "https://eurest.mashie.com/public/menu/sn%C3%A4ckviken/bad07c57?country=se"        
         request(url, function(error,response,html){
 
             var $ = cheerio.load(html);
