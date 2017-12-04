@@ -23,7 +23,7 @@ var appRouter = function(app) {
             //script = script.replace(/"[(]"/g,"")
             script = script.replace(/[{()})]/g, "");
             parsedScript = JSON.parse(script);
-            //console.log(parsedScript);
+            console.log(parsedScript);
             res.setHeader("Content-Type","application/json");
             res.send(parsedScript);
         });
