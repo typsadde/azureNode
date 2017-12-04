@@ -24,7 +24,7 @@ var appRouter = function(app) {
             //parsedScript = JSON.parse(script);
             console.log(script);
             res.setHeader("Content-Type","application/json");
-            res.send(script);
+            res.send(script["Weeks"]);
         });
     });
 
