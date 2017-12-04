@@ -19,7 +19,7 @@ var appRouter = function(app) {
             script = script.replace('</script>','')
             script = script.replace(/\s/g,'')
             script = script.replace('varweekData=','')
-            script = script.replace(/"newDate"/g,"")
+            script = script.replace(/"DayMenuDate":newDate/g,"")
             //script = script.replace(/""/g,"")
             //script = script.replace(/")"/g,"")
             //parsedScript = JSON.parse(script);
@@ -29,7 +29,7 @@ var appRouter = function(app) {
         });
     });
 
-    app.get("/curr ency", function(req, res) {
+    app.get("/currency", function(req, res) {
         var base = req.query.base;
         var symbols = req.query.symbols;
         var url = "https://api.fixer.io/latest"
