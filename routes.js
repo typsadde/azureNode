@@ -23,9 +23,9 @@ var appRouter = function(app) {
             //script = script.replace(/"[(]"/g,"")
             script = script.replace(/[{()})]/g, "");
             //parsedScript = JSON.parse(script);
-            console.log(script);
+            //console.log(script);
             res.setHeader("Content-Type","application/json");
-            res.send(script);
+            res.send(JSON.parse(script));
         });
     });
 
