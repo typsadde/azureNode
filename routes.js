@@ -80,7 +80,7 @@ var appRouter = function (app) {
             }
 
             res.setHeader("Content-Type", "application/json");
-            res.send(menuToGet);
+            res.send(menuArray);
         });
     });
 
