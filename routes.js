@@ -58,7 +58,7 @@ var appRouter = function(app) {
             var menuArray = [mondayMenu,tuesdayMenu,wednesdayMenu,thursdayMenu,fridayMenu];
             
 
-            console.log(menuArray[mondayMenu]);
+            console.log(menuArray.mondayMenu);
 
             if (DayMenuName&&Day) {
                 menuToGet = parsedScript["Weeks"][0]["Days"][Day]["DayMenus"][DayMenuName]["DayMenuName"];
