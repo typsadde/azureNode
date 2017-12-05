@@ -58,10 +58,10 @@ var appRouter = function(app) {
             var menuArray = [mondayMenu,tuesdayMenu,wednesdayMenu,thursdayMenu,fridayMenu];
             
 
-            console.log(menuArray[0]);
-
-            if (DayMenuName&&Day) {
-                menuToGet = parsedScript["Weeks"][0]["Days"][Day]["DayMenus"][DayMenuName]["DayMenuName"];
+            console.log(menuArray[]);
+            
+            if (Day.toLowerCase()==monday) {
+                menuToGet = menuArray[0]; 
             }
 
             res.setHeader("Content-Type","application/json");
