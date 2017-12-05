@@ -59,8 +59,8 @@ var appRouter = function(app) {
             
 
            // console.log(menuArray[]);
-            
-            if (Day.toString().toLowerCase()==monday) {
+            Day = Day.toString();
+            if (Day.toLowerCase()==monday) {
                 menuToGet = menuArray[0]; 
             }
 
