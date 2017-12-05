@@ -49,7 +49,7 @@ var appRouter = function(app) {
                 wednesdayMenu.push(parsedScript["Weeks"][0]["Days"][2]["DayMenus"][i]["DayMenuName"])
                 }
             for (var i = 0; i < NUMBER_OF_MENUS;i++) {
-                thursdsayMenu.push(parsedScript["Weeks"][0]["Days"][3]["DayMenus"][i]["DayMenuName"])
+                thursdayMenu.push(parsedScript["Weeks"][0]["Days"][3]["DayMenus"][i]["DayMenuName"])
                 }
             for (var i = 0; i < NUMBER_OF_MENUS;i++) {
                 fridayMenu.push(parsedScript["Weeks"][0]["Days"][4]["DayMenus"][i]["DayMenuName"])
