@@ -18,19 +18,29 @@ var appRouter = function(app) {
             var script = $('script').first().toString();
             script = script.replace('<script>','')
             script = script.replace('</script>','')
-            //script = script.replace(/\s/g,'')
             script = script.replace('var weekData = ','')
             script = script.replace(/new Date/g,"")
-            //script = script.replace(/"[(]"/g,"")
             script = script.replace(/[()]/g, "");
             try {
                 parsedScript = JSON.parse(script);
             } catch (e) {
                 console.log("THIS IS THE ERROR!!!!!!:"+e.message)
             }
+
+           
             
             //console.log(script);
-            var menuToGet = parsedScript;            
+            var menuToGet = parsedScript;        
+            
+            var menuArray = [];
+
+            for (var i =0; i < parsedScript["Weeks"][0]["Days"].length;i++) {
+                for (var j =0; j < parsedScript["Weeks"][0]["Days"][0]["DayMenus"].length;j++) {
+                    menuArray.push(parsedScript["Weeks"][0]["Days"][i]["DayMenus"][j]["DayMenuName"])
+                }
+            }
+
+            console.log(menuArray);
 
             if (DayMenuName&&Day) {
                 menuToGet = parsedScript["Weeks"][0]["Days"][Day]["DayMenus"][DayMenuName]["DayMenuName"];
