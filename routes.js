@@ -63,6 +63,18 @@ var appRouter = function(app) {
             if (Day.toLowerCase()=="monday") {
                 menuToGet = menuArray[0]; 
             }
+            else if (Day.toLowerCase()=="tuesday") {
+                menuToGet = menuArray[1]; 
+            }
+            else if (Day.toLowerCase()=="wednesday") {
+                menuToGet = menuArray[2]; 
+            }
+            else if (Day.toLowerCase()=="thursday") {
+                menuToGet = menuArray[0]; 
+            }
+            else if (Day.toLowerCase()=="friday") {
+                menuToGet = menuArray[0]; 
+            }
 
             res.setHeader("Content-Type","application/json");
             res.send(menuToGet);
