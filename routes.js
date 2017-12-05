@@ -31,8 +31,6 @@ var appRouter = function (app) {
             NUMBER_OF_MENUS = parsedScript["Weeks"][0]["Days"][0]["DayMenus"].length;
 
             //console.log(script);
-            var menuToGet = parsedScript;
-
             var mondayMenu = [];
             var tuesdayMenu = [];
             var wednesdayMenu = [];
@@ -57,8 +55,8 @@ var appRouter = function (app) {
 
             var menuArray = [mondayMenu, tuesdayMenu, wednesdayMenu, thursdayMenu, fridayMenu];
 
-
             // console.log(menuArray[]);
+            var menuToGet = menuArray;
             if (Day) {
                 Day = Day.toString();
 
@@ -80,7 +78,7 @@ var appRouter = function (app) {
             }
 
             res.setHeader("Content-Type", "application/json");
-            res.send({"menu":menuArray});
+            res.send({"menu":menuToGet});
         });
     });
 
