@@ -40,21 +40,21 @@ var appRouter = function(app) {
             var fridayMenu = [];
             
             for (var i = 0; i < NUMBER_OF_MENUS;i++) {
-                mondayMenu.push(parsedScript["Weeks"][0]["Days"][0]["DayMenus"][j]["DayMenuName"])
+                mondayMenu.push(parsedScript["Weeks"][0]["Days"][0]["DayMenus"][i]["DayMenuName"])
                 }
             for (var i = 0; i < NUMBER_OF_MENUS;i++) {
-                tuesdayMenu.push(parsedScript["Weeks"][0]["Days"][1]["DayMenus"][j]["DayMenuName"])
+                tuesdayMenu.push(parsedScript["Weeks"][0]["Days"][1]["DayMenus"][i]["DayMenuName"])
                 }
             for (var i = 0; i < NUMBER_OF_MENUS;i++) {
-                wednesdayMenu.push(parsedScript["Weeks"][0]["Days"][2]["DayMenus"][j]["DayMenuName"])
+                wednesdayMenu.push(parsedScript["Weeks"][0]["Days"][2]["DayMenus"][i]["DayMenuName"])
                 }
             for (var i = 0; i < NUMBER_OF_MENUS;i++) {
-                thursdsayMenu.push(parsedScript["Weeks"][0]["Days"][3]["DayMenus"][j]["DayMenuName"])
+                thursdsayMenu.push(parsedScript["Weeks"][0]["Days"][3]["DayMenus"][i]["DayMenuName"])
                 }
             for (var i = 0; i < NUMBER_OF_MENUS;i++) {
-                fridayMenu.push(parsedScript["Weeks"][0]["Days"][4]["DayMenus"][j]["DayMenuName"])
+                fridayMenu.push(parsedScript["Weeks"][0]["Days"][4]["DayMenus"][i]["DayMenuName"])
                 }
-                
+
             var menuArray = [mondayMenu,tuesdayMenu,wednesdayMenu,thursdayMenu,fridayMenu];
             
 
