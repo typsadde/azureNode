@@ -27,18 +27,36 @@ var appRouter = function(app) {
                 console.log("THIS IS THE ERROR!!!!!!:"+e.message)
             }
 
-           
+            NUMBER_OF_DAYS = parsedScript["Weeks"][0]["Days"].length;
+            NUMBER_OF_MENUS = parsedScript["Weeks"][0]["Days"][0]["DayMenus"].length;
             
             //console.log(script);
             var menuToGet = parsedScript;        
             
-            var menuArray = [];
-
-            for (var i =0; i < parsedScript["Weeks"][0]["Days"].length;i++) {
-                for (var j =0; j < parsedScript["Weeks"][0]["Days"][0]["DayMenus"].length;j++) {
-                    menuArray.push(parsedScript["Weeks"][0]["Days"][i]["DayMenus"][j]["DayMenuName"])
+            var mondayMenu = [];
+            var tuesdayMenu = [];
+            var wednesdayMenu = [];
+            var thursdayMenu = [];
+            var fridayMenu = [];
+            
+            for (var i = 0; i < NUMBER_OF_MENUS;i++) {
+                mondayMenu.push(parsedScript["Weeks"][0]["Days"][0]["DayMenus"][j]["DayMenuName"])
                 }
-            }
+            for (var i = 0; i < NUMBER_OF_MENUS;i++) {
+                tuesdayMenu.push(parsedScript["Weeks"][0]["Days"][1]["DayMenus"][j]["DayMenuName"])
+                }
+            for (var i = 0; i < NUMBER_OF_MENUS;i++) {
+                wednesdayMenu.push(parsedScript["Weeks"][0]["Days"][2]["DayMenus"][j]["DayMenuName"])
+                }
+            for (var i = 0; i < NUMBER_OF_MENUS;i++) {
+                thursdsayMenu.push(parsedScript["Weeks"][0]["Days"][3]["DayMenus"][j]["DayMenuName"])
+                }
+            for (var i = 0; i < NUMBER_OF_MENUS;i++) {
+                fridayMenu.push(parsedScript["Weeks"][0]["Days"][4]["DayMenus"][j]["DayMenuName"])
+                }
+                
+            var menuArray = [mondayMenu,tuesdayMenu,wednesdayMenu,thursdayMenu,fridayMenu];
+            
 
             console.log(menuArray);
 
