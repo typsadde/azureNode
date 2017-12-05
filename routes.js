@@ -11,6 +11,10 @@ var appRouter = function (app) {
     app.get("/restaurant", function (req, res) {
         var DayMenuName = req.query.Menu;
         var Day = req.query.Day;
+        var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];        
+        var now = new Date();
+        var today = days[now.getDay()].toLowerCase();
+
         res.setHeader('Content-Type', 'application/json')
         url = "https://eurest.mashie.com/public/menu/sn%C3%A4ckviken/bad07c57?country=se"
         request(url, function (error, response, html) {
@@ -59,7 +63,9 @@ var appRouter = function (app) {
             var menuToGet = menuArray;
             if (Day) {
                 Day = Day.toString();
-
+                if (Day=='today') {
+                    Day = today;
+                }
                 if (Day.toLowerCase() == "monday") {
                     menuToGet = menuArray[0];
                 }
